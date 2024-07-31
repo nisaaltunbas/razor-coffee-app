@@ -1,0 +1,17 @@
+﻿@page
+@model RazorCoffeApp.Pages.Checkout.CheckoutModel
+@{
+}
+<h1>Your Order!</h1>
+@{
+    var imgPath = "~/images/coffees/" + (Model.ImageTitle + ".png");
+}
+<div class="align-content-center">
+    <div class="col-3 mx-auto mb-5">
+        <img src=@imgPath  class="w-100 mb-2" asp-append-version="true"/>
+        <p>Your order for @Model.CoffeeName is ready!</p>
+        <p>Total Price: @Model.CoffeePrice$</p>
+        <br />
+        <a class="btn btn-success mt-1 mx-auto" asp-area="" asp-page="Thanks">Confirm Order</a>
+    </div>
+</div>

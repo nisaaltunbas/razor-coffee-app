@@ -1,0 +1,55 @@
+﻿@page
+@model RazorCoffeApp.Pages.Forms.CustomCoffeeModel
+@{
+}
+<div class="text-center container ">
+    <h1>Create Your Own Coffee!</h1>
+    <form method="post" class="mx-auto rounded-5 col-4 mt-2 mb-2 ">
+        <input type="text" asp-for="Coffee.CoffeeName" placeholder="Enter the name" />
+        <br />
+        <label style="font-weight:bold;">Coffee Bean</label>
+        <br />
+        <input class="form-check-input"  type="radio" asp-for="Coffee.BeanType" value="Arabica" /> Arabica
+        <input class="form-check-input"  type="radio" asp-for="Coffee.BeanType" value="Robusta"  /> Robusta
+        <input class="form-check-input"  type="radio" asp-for="Coffee.BeanType" value="Liberica"  /> Liberica
+        <input class="form-check-input"  type="radio" asp-for="Coffee.BeanType" value="Excelsa"  /> Excelsa
+        <br />
+        <label style="font-weight:bold;">Milk Options</label>
+        <br />
+        <input class="form-check-input"  type="radio" asp-for="Coffee.MilkType" value="WholeMilk" /> WholeMilk
+        <input class="form-check-input"  type="radio" asp-for="Coffee.MilkType" value="SemiSkimmedMilk" /> Semi Skimmed Milk
+        <input class="form-check-input"  type="radio" asp-for="Coffee.MilkType" value="SkimmedMilk" /> Skimmed Milk
+        <input class="form-check-input"  type="radio" asp-for="Coffee.MilkType" value="AlmondMilk" /> Almond Milk
+        <input class="form-check-input"  type="radio" asp-for="Coffee.MilkType" value="OatMilk" /> Oat Milk
+        <input class="form-check-input"  type="radio" asp-for="Coffee.MilkType" value="SoyMilk" /> Soy Milk
+        <br />
+        <label style="font-weight:bold;">Syrups</label>
+        <br />
+        <input class="form-check-input"  type="radio" asp-for="Coffee.SyrupType" value="Vanilla" /> Vanilla
+        <input class="form-check-input"  type="radio" asp-for="Coffee.SyrupType" value="Caramel" /> Caramel
+        <br />
+        <label style="font-weight:bold;">Sweeteners</label>
+        <br />
+        <input class="form-check-input" type="radio" asp-for="Coffee.SweetenersType" value="Sugar" /> Sugar
+        <input class="form-check-input" type="radio" asp-for="Coffee.SweetenersType" value="BrownSugar" /> BrownSugar
+        <br />
+        <label style="font-weight:bold;">Extra Espresso Shot</label>
+        <br />
+        <input class="form-check-input" type="checkbox" asp-for="Coffee.ExtraShot"  /> Extra Shot
+        <br />
+        <label style="font-weight:bold;">Cream And Foam</label>
+        <br />
+        <input class="form-check-input"  type="radio" asp-for="Coffee.CreamType" value="WhippedCream" /> Whipped Cream
+        <input class="form-check-input"  type="radio" asp-for="Coffee.CreamType" value="MoreFoam" /> More Foam
+        <input class="form-check-input"  type="radio" asp-for="Coffee.CreamType" value="NoFoam" /> No Foam
+        <br />
+        <label style="font-weight:bold;">Spices And Extras</label>
+        <br />
+        <input class="form-check-input"  type="checkbox" asp-for="Coffee.Cinnamon" /> Cinnamon
+        <input class="form-check-input"  type="checkbox" asp-for="Coffee.Cardamom"  /> Cardamom
+        <input class="form-check-input"  type="checkbox" asp-for="Coffee.ChocolateChips" /> Chocolate Chips
+        <input class="form-check-input"  type="checkbox" asp-for="Coffee.CaramelSauces"  /> Caramel Sauces
+        <br />
+        <button class="btn btn-success mt-2" type="submit">Order the coffee</button>
+    </form>
+</div>

@@ -1,0 +1,44 @@
+﻿@page
+@model RazorCoffeApp.Pages.CoffeeModel
+@{
+}
+
+<div class="text-center">
+    <div class="mainText">
+        <h1 class="display-4 text-capitalize">Our Special Coffees!</h1>
+        <h4>Choose one or make your own coffee!</h4>
+        <p class="smallText">You can only one coffee per order</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-5 mt-2">
+                <div class="w-100 row makeYourOwnDiv">
+                    <div class="col-4">
+                        <img src="~/images/Coffees/createcoffee.png" class="w-100 createImg">
+                    </div>
+                    <div class="col-6 align-items-center">
+                        <div class="align-middle makeYourOwnText">
+                            <h3 style="text-align:center;">Create Your Own Coffee!</h3>
+                            <p style="text-align:center;">Make your own coffee with our application</p>
+                            <a class="btn btn-primary" style="margin-right:13rem;" asp-page="Forms/CustomCoffee">Try Now!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @foreach (var coffee in Model.fakeCoffeeDB)
+            {
+                var imgPath = "~/images/coffees/" + (coffee.ImageTitle + ".png");
+
+                <div class="col-4 mb-5">
+                    <img src="@imgPath" class="w-100" asp-append-version="true" />
+                    <h3>@coffee.CoffeeName</h3>
+                    <a class="btn btn-primary mt-1" asp-area="" asp-page="Checkout/Checkout"
+                    asp-route-ImageTitle="@coffee.ImageTitle" 
+                    asp-route-CoffeePrice="@coffee.FinalPrice">Get the coffee</a>
+                    <br />
+                </div>
+            }
+        </div>
+    </div>
+</div>
